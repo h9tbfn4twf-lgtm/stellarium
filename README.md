@@ -1,20 +1,27 @@
-# Sky Log · 천체관측 도장깨기
+# Sky Log · 천체관측 도장깨기 (v1.2)
 
-## 구성
-- Messier 110
-- Non-Messier 60
-- Stars 42
-- 장비별 기록
-- Night Vision + Dim
-- JSON/CSV 백업
-- PWA / 오프라인 캐시
+구성: **Messier 110**, **Non-Messier 60**, **Stars 42** · 장비별 독립 관측 기록 · 나이트비전(빨간 글씨/검정 배경) · 계절/난이도/미관측 필터 · JSON 백업·복구 · CSV 출력 · 홈 화면 설치(PWA) · 오프라인 사용.
 
-## GitHub Pages
-1. GitHub 새 저장소 생성
-2. 이 폴더의 파일을 저장소 최상위에 업로드
-3. Settings → Pages → Deploy from a branch
-4. main / root 선택 후 Save
-5. 생성된 Pages 주소를 Safari에서 열기
-6. 공유 → 홈 화면에 추가
+## GitHub Pages에 기존 사이트 업데이트하기
 
-기록은 기기별 브라우저 localStorage에 저장되므로 가끔 JSON 백업을 권장. 예전 Messier-only JSON도 불러오면 자동 변환함.
+1. 이 ZIP 파일을 **압축 해제**해. ZIP 그 자체를 저장소에 올리는 게 아니야.
+2. 압축을 풀면 `index.html`, `sw.js`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png`, `README.md`가 있어.
+3. GitHub의 **기존 저장소**에서 `Add file` → `Upload files`로 이 6개 파일을 **저장소 최상위**에 업로드해. 같은 파일명은 덮어쓰기(갱신)해.
+4. 아래쪽 `Commit changes`로 저장해. 새 저장소나 새 Pages 주소는 만들 필요 없어.
+5. 기존 Pages 주소에 접속해. 예전 화면이 계속 보이면 URL 끝에 `?v=12`를 붙여 새로 열거나, 브라우저에서 강력 새로고침/사이트 데이터 갱신을 해봐.
+6. iPhone에서는 Safari로 접속 → 공유 → **홈 화면에 추가**.
+
+## 기록 관련 주의사항
+
+- 기록은 서버가 아닌 **각 기기의 브라우저 localStorage**에 저장돼. PC와 iPhone 간 자동동기화는 없어.
+- 같은 URL과 브라우저를 쓰면서 파일만 교체하면 기존 기록은 보통 유지돼.
+- 중요한 기록은 `JSON 백업`으로 보관하고, 다른 기기에서는 `불러오기`로 옮겨.
+- 기존 Messier-only JSON 백업도 가져올 수 있게 변환 기능을 넣었어.
+- v1.2는 **Dim 화면 덮개 기능을 완전히 제거**했어. 밝기는 휴대폰 기본 밝기 조절을 사용해.
+
+## v1.2 수정 내용
+
+- 신규 이용자의 첫 실행에서 목록이 뜨지 않는 JavaScript 초기화 순서 오류 수정
+- 검정 화면을 유발할 수 있는 Dim 레이어와 컨트롤 제거
+- 서비스워커 캐시 버전 교체 및 화면 갱신 로직 수정
+- PC·모바일 화면 크기로 목록·관측 기록·나이트비전 기능 검증
