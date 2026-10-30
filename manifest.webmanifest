@@ -1,0 +1,22 @@
+{
+  "name": "Sky Log · 천체관측 도장깨기",
+  "short_name": "Sky Log",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "description": "Messier 110, Non‑Messier 60, Stars 42 개인 관측 기록 PWA",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
